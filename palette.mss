@@ -93,19 +93,19 @@ Map { font-directory: url(./fonts); }
  *         inner fill (inline).
  */
 
-@motorway_line:     #E65C5C;
+@motorway_line:     #e64545;
 @motorway_fill:     lighten(@motorway_line,10%);
 @motorway_case:     @motorway_line * 0.8;
 
-@trunk_line:        #e6735c;
+@trunk_line:        #e66d45;
 @trunk_fill:        lighten(@trunk_line,10%);
 @trunk_case:        @trunk_line * 0.7;
 
-@primary_line:      #e68a5c;
+@primary_line:      #e69645;
 @primary_fill:      lighten(@primary_line,10%);
 @primary_case:      @primary_line * 0.7;
 
-@secondary_line:    #e6b65c;
+@secondary_line:    #e6be45;
 @secondary_fill:    lighten(@secondary_line,10%);
 @secondary_case:    @secondary_line * 0.7;
 
