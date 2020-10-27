@@ -105,7 +105,7 @@ Map { font-directory: url(./fonts); }
 @primary_fill:      lighten(@primary_line,10%);
 @primary_case:      @primary_line * 0.7;
 
-@secondary_line:    #e6be45;
+@secondary_line:    #cca93d;
 @secondary_fill:    lighten(@secondary_line,10%);
 @secondary_case:    @secondary_line * 0.7;
 
