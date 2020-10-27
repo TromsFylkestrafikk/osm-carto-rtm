@@ -14,6 +14,8 @@
   [zoom >= 16] {
     marker-file: url('img/icon/bus_stop.12.svg');
     marker-width: 12;
+  }
+  [zoom >= 17] {
     text-name: "[name]";
     text-size: 10;
     text-wrap-width: 80;
@@ -23,6 +25,9 @@
     text-face-name: @sans;
     text-halo-radius: 1.5;
     text-halo-fill: #fff;
+  }
+  [zoom >= 18] {
+    marker-width: 18;
   }
 }
 
