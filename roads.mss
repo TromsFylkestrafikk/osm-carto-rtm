@@ -304,14 +304,6 @@ come in as well.
     [stylegroup='railway']  { line-width: 4; }
   }
 }
-#roads_high[zoom>=10][zoom<=20][stylegroup='service'][zoom>=16][zoom<=20] {
-  line-width: 0;
-  line-cap: round;
-  line-join: round;
-  [zoom=16] { line-width: @rdz16_min / 3; }
-  [zoom=17] { line-width: @rdz17_min / 3; }
-  [zoom>=18] { line-width: @rdz18_min / 2; }
-}
 
 /* ---- Bridge fill for dashed lines -------------------------------- */
 #tunnel[render='2_line'][zoom>=14][zoom<=20],
