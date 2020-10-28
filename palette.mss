@@ -141,6 +141,9 @@ Map { font-directory: url(./fonts); }
 @water_text:	   #4594d8;
 @water_halo:	   #fff;
 
+@glacier: #ddecec;
+@glacier-line: #9cf;
+
 /* We set up a default halo color for places so you can edit them all
    at once or override each individually. */
 @place_halo:        fadeout(#fff,34%);
