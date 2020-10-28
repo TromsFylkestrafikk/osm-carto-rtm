@@ -113,7 +113,7 @@ Map { font-directory: url(./fonts); }
 @tertiary_fill:     #fff;
 @tertiary_case:     @land * 0.65;
 
-@standard_line:     @land * 0.8;
+@standard_line:     @land * 0.85;
 @standard_fill:     #fff;
 @standard_case:     @land * 0.8;
 
