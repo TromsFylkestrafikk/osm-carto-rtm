@@ -57,7 +57,19 @@
 #landuse_overlays[type='wetland'][zoom>11] {
   [zoom>11][zoom<=14] { polygon-pattern-file:url(img/marsh-16.png); }
   [zoom>14] { polygon-pattern-file:url(img/marsh-32.png);}
+}
+
+#landuse[type = 'glacier'] {
+  [zoom >= 7] {
+    line-width: 1.0;
+    line-color: @glacier-line;
+    polygon-fill: @glacier;
+    [zoom >= 10] {
+      line-dasharray: 4,2;
+      line-width: 1.5;
+    }
   }
+}
 
 /* ---- BUILDINGS ---- */
 #buildings[zoom>=12][zoom<=16] {

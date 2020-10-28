@@ -28,6 +28,6 @@
   }
   [zoom >= 18] {
     marker-width: 18;
+    text-size: 12;
   }
 }
-
