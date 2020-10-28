@@ -24,6 +24,7 @@
   [type='commercial']    { polygon-fill: @industrial; }
   [type='common']        { polygon-fill: @park; }
   [type='forest']        { polygon-fill: @wooded; }
+  [type='glacier']       { polygon-fill: @glacier; }
   [type='golf_course']   { polygon-fill: @sports; }
   [type='grass']         { polygon-fill: @grass; }
   [type='hospital']      { polygon-fill: @hospital; }
@@ -59,12 +60,14 @@
   [zoom>14] { polygon-pattern-file:url(img/marsh-32.png);}
 }
 
-#landuse[type = 'glacier'] {
+#landuse_gen0[zoom > 3][zoom <= 9][type = 'glacier'],
+#landuse_gen1[zoom > 9][zoom <= 12][type = 'glacier'],
+#landuse[zoom >= 13][type = 'glacier'] {
   [zoom >= 7] {
     line-width: 1.0;
     line-color: @glacier-line;
     polygon-fill: @glacier;
-    [zoom >= 10] {
+    [zoom > 10] {
       line-dasharray: 4,2;
       line-width: 1.5;
     }

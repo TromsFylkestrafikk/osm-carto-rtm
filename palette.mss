@@ -75,7 +75,7 @@ Map { font-directory: url(./fonts); }
 @school:            #FFF5CC;
 @sports:            #B8E6B8;
 
-@residential:       @land * 0.98;
+@residential:       #f5f5f5;
 @commercial:        @land * 0.97;
 @industrial:        @land * 0.96;
 @parking:           #EEE;
@@ -109,9 +109,13 @@ Map { font-directory: url(./fonts); }
 @secondary_fill:    lighten(@secondary_line,10%);
 @secondary_case:    @secondary_line * 0.7;
 
-@standard_line:     @land * 0.85;
+@tertiary_line:     @land * 0.7;
+@tertiary_fill:     #fff;
+@tertiary_case:     @land * 0.65;
+
+@standard_line:     @land * 0.8;
 @standard_fill:     #fff;
-@standard_case:     @land * 0.7;
+@standard_case:     @land * 0.8;
 
 @pedestrian_line:   @standard_line;
 @pedestrian_fill:   #FAFAF5;
