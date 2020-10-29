@@ -184,30 +184,49 @@ Map { background-color: @water; }
 /* ================================================================== */
 
 
-#admin[admin_level='2'][zoom>1] {
-  line-color:@admin_2;
-  line-width:0.5;
-  [zoom=2] { line-opacity: 0.25; }
-  [zoom=3] { line-opacity: 0.3; }
-  [zoom=4] { line-opacity: 0.4; }
+#admin[admin_level = '2' ][zoom > 1] {
+  line-color: @admin_2;
+  line-width: 0.5;
+  [zoom = 2] { line-opacity: 0.25; }
+  [zoom = 3] { line-opacity: 0.3; }
+  [zoom = 4] { line-opacity: 0.4; }
 }
 
 /* Norwegian counties */
 #admin[admin_level = '4'][zoom >= 6] {
-  line-color:@admin_4;
-  line-width:3;
-  [zoom=6] { line-opacity: 0.25; }
-  [zoom=7] { line-opacity: 0.3; }
-  [zoom=8] { line-opacity: 0.4; }
+  line-color: @admin_4;
+  line-width: 3;
+  [zoom = 6]  { line-opacity: 0.25; line-width: 1; }
+  [zoom = 7]  { line-opacity: 0.3; line-width: 1.5; }
+  [zoom = 8]  { line-opacity: 0.4; line-width: 2; }
+  [zoom >= 9] { line-width: 4; }
 }
 
 /* Norwegian municipals */
-#admin[admin_level = '7'][zoom >= 8] {
-  line-color:@admin_4;
-  line-width:1;
-  [zoom=8] { line-opacity: 0.25; }
-  [zoom=9] { line-opacity: 0.3; }
-  [zoom=10] { line-opacity: 0.4; }
+#admin[admin_level = '7'][zoom >= 9] {
+  line-color: @admin_7;
+  line-width: 1;
+  [zoom = 9] { line-opacity: 0.25; }
+  [zoom = 10] { line-opacity: 0.3; }
+  [zoom = 11] { line-opacity: 0.4; }
+}
+
+/* Add labels along the inside of the polygon lines */
+#admin_text[admin_level = '4'][zoom >= 11],
+#admin_text[admin_level = '7'][zoom >= 14] {
+  text-face-name: @sans;
+  text-name: '[name]';
+  text-fill: @admin_7 * .6;
+  text-halo-fill: lighten(@admin_7, 40%);
+  text-halo-radius: 2;
+  text-largest-bbox-only: false;
+  text-placement: line;
+  text-spacing: 750;
+  text-repeat-distance: 250;
+  text-margin: 10;
+  text-clip: true;
+  text-vertical-alignment: middle;
+  text-dy: -10;
 }
 
 /* ================================================================== */

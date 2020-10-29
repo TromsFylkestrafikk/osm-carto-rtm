@@ -50,6 +50,7 @@ as well. */
   [zoom=8] {
     [type='motorway'],[type='trunk'] { line-width: 2; }
     [type='primary'] { line-width: 1.4; }
+    [type='secondary'] { line-width: 0; }
   }
   [zoom=9] {
     [type='motorway'],[type='trunk'] { line-width: 2.5; }
