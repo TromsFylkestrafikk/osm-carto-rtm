@@ -129,7 +129,7 @@ Map { font-directory: url(./fonts); }
 @rail_fill:         #fff;
 @rail_case:         @land;
 
-@aeroway:           #ddd;
+@aeroway:           #bdbae3;
 
 /* ================================================================== */
 /* BOUNDARY COLORS

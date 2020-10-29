@@ -395,26 +395,26 @@ come in as well.
   line-cap:butt;
   line-join:miter;
   [type='runway'] {
-    [zoom=10]{ line-width:1; }
-    [zoom=11]{ line-width:2; }
-    [zoom=12]{ line-width:3; }
-    [zoom=13]{ line-width:5; }
-    [zoom=14]{ line-width:7; }
-    [zoom=15]{ line-width:11; }
-    [zoom=16]{ line-width:15; }
-    [zoom=17]{ line-width:19; }
-    [zoom>17]{ line-width:23; }
+    [zoom=10]{ line-width:2; }
+    [zoom=11]{ line-width:3; }
+    [zoom=12]{ line-width:5; }
+    [zoom=13]{ line-width:7; }
+    [zoom=14]{ line-width:12; }
+    [zoom=15]{ line-width:16; }
+    [zoom=16]{ line-width:20; }
+    [zoom=17]{ line-width:25; }
+    [zoom>17]{ line-width:32; }
   }
   [type='taxiway'] {
     [zoom=10]{ line-width:0.2; }
     [zoom=11]{ line-width:0.2; }
-    [zoom=12]{ line-width:0.2; }
-    [zoom=13]{ line-width:1; }
-    [zoom=14]{ line-width:1.5; }
-    [zoom=15]{ line-width:2; }
-    [zoom=16]{ line-width:3; }
-    [zoom=17]{ line-width:4; }
-    [zoom>17]{ line-width:5; }
+    [zoom=12]{ line-width:1.5; }
+    [zoom=13]{ line-width:2; }
+    [zoom=14]{ line-width:3; }
+    [zoom=15]{ line-width:5; }
+    [zoom=16]{ line-width:7; }
+    [zoom=17]{ line-width:10; }
+    [zoom>17]{ line-width:15; }
   }
 }
 
