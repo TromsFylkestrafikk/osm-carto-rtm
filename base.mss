@@ -192,6 +192,24 @@ Map { background-color: @water; }
   [zoom=4] { line-opacity: 0.4; }
 }
 
+/* Norwegian counties */
+#admin[admin_level = '4'][zoom >= 6] {
+  line-color:@admin_4;
+  line-width:3;
+  [zoom=6] { line-opacity: 0.25; }
+  [zoom=7] { line-opacity: 0.3; }
+  [zoom=8] { line-opacity: 0.4; }
+}
+
+/* Norwegian municipals */
+#admin[admin_level = '7'][zoom >= 8] {
+  line-color:@admin_4;
+  line-width:1;
+  [zoom=8] { line-opacity: 0.25; }
+  [zoom=9] { line-opacity: 0.3; }
+  [zoom=10] { line-opacity: 0.4; }
+}
+
 /* ================================================================== */
 /* BARRIER POINTS
 /* ================================================================== */

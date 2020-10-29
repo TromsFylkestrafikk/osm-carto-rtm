@@ -325,7 +325,7 @@
         "id": "admin",
         "key_field": "",
         "project": "osm-bright-imposm",
-        "table": "( SELECT way, admin_level\n  FROM planet_osm_line\n  WHERE boundary = 'administrative'\n    AND admin_level IN ('2','3','4')\n) AS data",
+        "table": "( SELECT way, admin_level\n  FROM planet_osm_line\n  WHERE boundary = 'administrative'\n    AND admin_level IN ('2','3','4','7')\n) AS data",
         "type": "postgis"
       },
       "class": "",
