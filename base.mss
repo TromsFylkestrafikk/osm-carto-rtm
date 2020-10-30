@@ -192,13 +192,19 @@ Map { background-color: @water; }
   [zoom = 4] { line-opacity: 0.4; }
 }
 
+#admin::outline[admin_level = '4'][zoom >= 9][zoom <= 15] {
+  line-color: lighten(@admin_4, 30%);
+  line-width: 1;
+  line-dasharray: 5,10;
+}
+
 /* Norwegian counties */
 #admin[admin_level = '4'][zoom >= 7][zoom <= 15] {
   line-color: @admin_4;
   line-width: 2;
   [zoom = 6]  { line-opacity: 0.25; }
-  [zoom = 7]  { line-opacity: 0.3; line-width: 3; }
-  [zoom = 8]  { line-opacity: 0.4; line-width: 4; }
+  [zoom = 7]  { line-opacity: 0.3; }
+  [zoom = 8]  { line-opacity: 0.4; line-width: 3; }
   [zoom >= 9] { line-width: 4; }
 }
 
