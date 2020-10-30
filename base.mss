@@ -193,30 +193,28 @@ Map { background-color: @water; }
 }
 
 /* Norwegian counties */
-#admin[admin_level = '4'][zoom >= 6] {
+#admin[admin_level = '4'][zoom >= 7][zoom <= 15] {
   line-color: @admin_4;
-  line-width: 3;
-  [zoom = 6]  { line-opacity: 0.25; line-width: 1; }
-  [zoom = 7]  { line-opacity: 0.3; line-width: 1.5; }
-  [zoom = 8]  { line-opacity: 0.4; line-width: 2; }
+  line-width: 2;
+  [zoom = 6]  { line-opacity: 0.25; }
+  [zoom = 7]  { line-opacity: 0.3; line-width: 3; }
+  [zoom = 8]  { line-opacity: 0.4; line-width: 4; }
   [zoom >= 9] { line-width: 4; }
 }
 
 /* Norwegian municipals */
-#admin[admin_level = '7'][zoom >= 9] {
+#admin[admin_level = '7'][zoom >= 9][zoom <= 15] {
   line-color: @admin_7;
   line-width: 1;
-  [zoom = 9] { line-opacity: 0.25; }
-  [zoom = 10] { line-opacity: 0.3; }
-  [zoom = 11] { line-opacity: 0.4; }
+  [zoom = 9],[zoom = 15] { line-opacity: 0.35; }
 }
 
 /* Add labels along the inside of the polygon lines */
-#admin_text[admin_level = '4'][zoom >= 11],
-#admin_text[admin_level = '7'][zoom >= 14] {
+#admin_border_label[admin_level = '4'][zoom >= 9][zoom <= 15],
+#admin_border_label[admin_level = '7'][zoom >= 12][zoom <= 15] {
   text-face-name: @sans;
   text-name: '[name]';
-  text-fill: @admin_7 * .6;
+  text-fill: @admin_7 * .8;
   text-halo-fill: lighten(@admin_7, 40%);
   text-halo-radius: 2;
   text-largest-bbox-only: false;
@@ -229,6 +227,31 @@ Map { background-color: @water; }
   text-dy: -10;
 }
 
+#county_label[zoom >= 7][zoom <= 8],
+#municipal_label[zoom >= 9][zoom <= 12] {
+  text-face-name: @sans;
+  text-name: '[name]';
+  text-character-spacing: 5;
+  text-transform: uppercase;
+  text-size: 11;
+  text-fill: @admin_7 * .8;
+  text-halo-fill: lighten(@admin_7, 40%);
+  text-halo-radius: 2;
+}
+#county_label[zoom >= 7][zoom <= 8] {
+  [zoom = 6] { text-size: 12; text-character-spacing: 3 }
+  [zoom = 7] { text-size: 13; text-character-spacing: 4 }
+  [zoom = 8] { text-size: 14; text-character-spacing: 5 }
+}
+#county_label[zoom = 8], 
+#municipal_label[zoom = 9] {
+  text-allow-overlap: true;
+}
+#municipal_label[zoom >= 9][zoom <= 11] {
+  [zoom = 9] { text-size: 11; text-character-spacing: 3 }
+  [zoom = 10] { text-size: 12.5; text-character-spacing: 4 }
+  [zoom = 11] { text-size: 14; text-character-spacing: 5 }
+}
 /* ================================================================== */
 /* BARRIER POINTS
 /* ================================================================== */
