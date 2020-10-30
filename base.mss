@@ -228,7 +228,7 @@ Map { background-color: @water; }
 }
 
 #county_label[zoom >= 7][zoom <= 8],
-#municipal_label[zoom >= 9][zoom <= 12] {
+#municipal_label[zoom >= 9][zoom <= 11] {
   text-face-name: @sans;
   text-name: '[name]';
   text-character-spacing: 5;
