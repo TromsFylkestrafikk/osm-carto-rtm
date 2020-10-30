@@ -212,8 +212,8 @@ Map { background-color: @water; }
 }
 
 /* Add labels along the inside of the polygon lines */
-#admin_text[admin_level = '4'][zoom >= 11],
-#admin_text[admin_level = '7'][zoom >= 14] {
+#admin_text[admin_level = '4'][zoom >= 10],
+#admin_text[admin_level = '7'][zoom >= 12] {
   text-face-name: @sans;
   text-name: '[name]';
   text-fill: @admin_7 * .6;
