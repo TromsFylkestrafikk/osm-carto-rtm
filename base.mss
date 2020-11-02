@@ -3,7 +3,6 @@
  * - Water areas
  * - Water ways
  * - Administrative Boundaries
- *
  */
 
 /* ================================================================== */
@@ -47,7 +46,6 @@
   line-dasharray: 1,1;
   polygon-fill: darken(@wooded,25%);
   polygon-opacity: 0.1;
-  [zoom=7] { line-width: 0.4; }
   [zoom=8] { line-width: 0.6; }
   [zoom=9] { line-width: 0.8; }
   [zoom=10] { line-width: 1.0; }
@@ -67,13 +65,15 @@
     line-width: 1.0;
     line-color: @glacier-line;
     polygon-fill: @glacier;
-    [zoom > 10] {
-      line-dasharray: 4,2;
-      line-width: 1.5;
-    }
   }
 }
-
+#landuse_gen1[zoom > 9][zoom <= 12][type = 'glacier'],
+#landuse[zoom >= 13][type = 'glacier'] {
+  [zoom > 10] {
+    line-dasharray: 4,2;
+    line-width: 1.5;
+  }
+}
 /* ---- BUILDINGS ---- */
 #buildings[zoom>=14][zoom<=16] {
   polygon-fill:@building;
@@ -242,7 +242,6 @@ Map { background-color: @water; }
   text-halo-radius: 2;
 }
 #county_label[zoom >= 7][zoom <= 8] {
-  [zoom = 6] { text-size: 12; text-character-spacing: 3 }
   [zoom = 7] { text-size: 13; text-character-spacing: 4 }
   [zoom = 8] { text-size: 14; text-character-spacing: 5 }
 }
@@ -254,37 +253,4 @@ Map { background-color: @water; }
   [zoom = 9] { text-size: 11; text-character-spacing: 3 }
   [zoom = 10] { text-size: 12.5; text-character-spacing: 4 }
   [zoom = 11] { text-size: 14; text-character-spacing: 5 }
-}
-/* ================================================================== */
-/* BARRIER POINTS
-/* ================================================================== */
-
-
-#barrier_points[zoom>=17][stylegroup = 'divider'] {
-  marker-height: 2;
-  marker-fill: #c7c7c7;
-  marker-line-opacity:0;
-  marker-allow-overlap:true;
-}
-
-/* ================================================================== */
-/* BARRIER LINES
-/* ================================================================== */
-
-#barrier_lines[zoom>=17][stylegroup = 'gate'] {
-  line-width:2.5;
-  line-color:#aab;
-  line-dasharray:3,2;
-}
-
-#barrier_lines[zoom>=17][stylegroup = 'fence'] {
-  line-width:1.75;
-  line-color:#aab;
-  line-dasharray:1,1;
-}
-
-#barrier_lines[zoom>=17][stylegroup = 'hedge'] {
-  line-width:3;
-  line-color:darken(@park,5%);
-
 }

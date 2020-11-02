@@ -9,6 +9,7 @@
 /* ================================================================== */
 /* PLACE NAMES
 /* ================================================================== */
+
 #place::country[type='country'][zoom>3][zoom<8] {
   text-name:'[name]';
   text-face-name:@sans_bold;
@@ -16,10 +17,6 @@
   text-fill:@country_text;
   text-halo-fill: @country_halo;
   text-halo-radius: 1;
-  [zoom=3] {
-    text-size:10 + @text_adjust;
-    text-wrap-width: 40;
-  }
   [zoom=4] {
     text-size:11 + @text_adjust;
     text-wrap-width: 50;
@@ -317,18 +314,6 @@
     text-wrap-width: 180;
   }
 }
-   
-#poi[type='university'][zoom>=15],
-#poi[type='hospital'][zoom>=16],
-#poi[type='school'][zoom>=17],
-#poi[type='library'][zoom>=17] {
-  text-name:"[name]";
-  text-face-name:@sans;
-  text-size:10;
-  text-wrap-width:30;
-  text-fill: @poi_text;
-}
-
 
 /* ================================================================== */
 /* WATERWAY LABELS
