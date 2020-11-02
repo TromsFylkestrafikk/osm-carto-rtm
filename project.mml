@@ -8,7 +8,7 @@
   "center": [
     18.9322,
     69.659,
-    9
+    12
   ],
   "format": "png8",
   "interactivity": false,
@@ -325,7 +325,7 @@
         "id": "admin",
         "key_field": "",
         "project": "osm-bright-imposm",
-        "table": "( SELECT way, admin_level, name\n  FROM planet_osm_line\n  WHERE boundary = 'administrative'\n    AND admin_level IN ('2','3','4','7')\n) AS data",
+        "table": "( SELECT way, admin_level, name\n  FROM planet_osm_line\n  WHERE boundary = 'administrative'\n    AND admin_level IN ('2','3','4','7')\n    ORDER BY admin_level DESC\n)AS data",
         "type": "postgis"
       },
       "class": "",
@@ -849,7 +849,7 @@
     }
   ],
   "scale": 1,
-  "metatile": 2,
+  "metatile": 3,
   "attribution": "Data © OpenStreetMap (and) contributors, ODbL",
   "description": "",
   "name": "Troms reise"
