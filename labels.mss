@@ -285,9 +285,15 @@
       text-fill: @school * 0.6;
       text-halo-fill: lighten(@school, 10%);
     }
-    [type='water'][zoom>=10] {
+    [type='water'][zoom>=10],
+    [type='bay'][zoom>=10] {
+      text-face-name: @sans_italic;
       text-fill: @water_text;
       text-halo-fill: @water_halo;
+    }
+    [type='glacier'][zoom>=10] {
+      text-fill: @glacier_text;
+      text-halo-fill: #fff;
     }
   }
   [zoom=15][area>1600000],

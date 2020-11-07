@@ -148,7 +148,8 @@ Map { font-directory: url(./fonts); }
 @water_halo:	   #fff;
 
 @glacier: #ddecec;
-@glacier-line: #9cf;
+@glacier_line: #9cf;
+@glacier_text: darken(@glacier_line, 10%);
 
 /* We set up a default halo color for places so you can edit them all
    at once or override each individually. */

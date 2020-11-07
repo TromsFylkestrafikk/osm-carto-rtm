@@ -63,7 +63,7 @@
 #landuse[zoom >= 13][type = 'glacier'] {
   [zoom >= 7] {
     line-width: 1.0;
-    line-color: @glacier-line;
+    line-color: @glacier_line;
     polygon-fill: @glacier;
   }
 }
