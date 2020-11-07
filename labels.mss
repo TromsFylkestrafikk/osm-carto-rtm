@@ -244,26 +244,71 @@
 // AREA LABELS
 // =====================================================================
 
-#area_label {
+#area_label_med,
+#area_label_high {
   // Bring in labels gradually as one zooms in, bases on polygon area
-  [zoom>=10][area>102400000],
-  [zoom>=11][area>25600000],
-  [zoom>=13][area>1600000],
-  [zoom>=14][area>320000],
-  [zoom>=15][area>80000],
-  [zoom>=16][area>20000],
-  [zoom>=17][area>5000],
-  [zoom>=18][area>=0] {
-    text-name: "[name]";
+  [zoom >= 8][zoom <= 12][area  >= 2000000000],
+  [zoom >= 9][zoom <= 13][area  >= 409600000][area < 2000000000],
+  [zoom >= 10][zoom <= 14][area >= 102400000][area < 409600000],
+  [zoom >= 11][zoom <= 15][area >= 25600000][area < 102400000],
+  [zoom >= 12][zoom <= 16][area >= 6400000][area < 25600000],
+  [zoom >= 13][zoom <= 17][area >= 1600000][area < 6400000],
+  [zoom >= 14][area >= 320000][area < 1600000],
+  [zoom >= 15][area >= 80000][area < 320000],
+  [zoom >= 16][area >= 20000][area < 80000],
+  [zoom >= 17][area >= 5000][area < 20000],
+  [zoom >= 18] {
+    text-name: [name] + "\n" + [area] / 1000000;
     text-halo-radius: 1.5;
-    text-face-name:@sans;
+    text-face-name: @sans;
     text-size: 11;
-    text-wrap-width:30;
+    text-wrap-width: 30;
     text-fill: #888;
     text-halo-fill: #fff;
+
+    // Bump font sizes as the zoom increases.
+    [zoom = 10][area > 2000000000],
+    [zoom = 11][area > 409600000],
+    [zoom = 12][area > 102400000],
+    [zoom = 13][area > 25600000],
+    [zoom = 14][area > 6400000],
+    [zoom = 15][area > 1600000],
+    [zoom = 16][area > 320000],
+    [zoom = 17][area > 80000],
+    [zoom = 18][area > 20000] {
+      text-size: 13;
+      text-wrap-width: 60;
+      text-character-spacing: 1;
+      text-halo-radius: 2;
+    }
+    [zoom = 11][area > 2000000000],
+    [zoom = 12][area > 409600000],
+    [zoom = 13][area > 102400000],
+    [zoom = 14][area > 25600000],
+    [zoom = 15][area > 6400000],
+    [zoom = 16][area > 1600000],
+    [zoom = 17][area > 320000],
+    [zoom = 18][area > 80000] {
+      text-size: 15;
+      text-character-spacing: 2;
+      text-wrap-width: 120;
+    }
+    [zoom = 12][area > 2000000000],
+    [zoom = 13][area > 409600000],
+    [zoom = 14][area > 102400000],
+    [zoom = 15][area > 25600000],
+    [zoom = 16][area > 6400000],
+    [zoom = 17][area > 1600000],
+    [zoom = 18][area > 320000] {
+      text-size: 20;
+      text-character-spacing: 3;
+      text-wrap-width: 180;
+    }
+
     // Specific style overrides for different types of areas:
     [type='park'][zoom>=10] {
       text-face-name: @sans_lt_italic;
+
       text-fill: @park * 0.6;
       text-halo-fill: lighten(@park, 10%);
     }
@@ -285,39 +330,22 @@
       text-fill: @school * 0.6;
       text-halo-fill: lighten(@school, 10%);
     }
-    [type='water'][zoom>=10],
-    [type='bay'][zoom>=10] {
+    [type='water'][zoom>=8],
+    [type='bay'][zoom>=8],
+    [type='strait'][zoom>=8],
+    [type='sea'][zoom >= 8] {
       text-face-name: @sans_italic;
       text-fill: @water_text;
       text-halo-fill: @water_halo;
     }
-    [type='glacier'][zoom>=10] {
+    [type='glacier'][zoom>=8] {
       text-fill: @glacier_text;
       text-halo-fill: #fff;
     }
-  }
-  [zoom=15][area>1600000],
-  [zoom=16][area>80000],
-  [zoom=17][area>20000],
-  [zoom=18][area>5000] {
-    text-name: "[name]";
-    text-size: 13;
-    text-wrap-width: 60;
-    text-character-spacing: 1;
-    text-halo-radius: 2;
-  }
-  [zoom=16][area>1600000],
-  [zoom=17][area>80000],
-  [zoom=18][area>20000] {
-    text-size: 15;
-    text-character-spacing: 2;
-    text-wrap-width: 120;
-  }
-  [zoom>=17][area>1600000],
-  [zoom>=18][area>80000] {
-    text-size: 20;
-    text-character-spacing: 3;
-    text-wrap-width: 180;
+    [type="island"][zoom >= 8],
+    [type="islet"][zoom >= 8] {
+      text-face-name: @sans_italic;
+    }
   }
 }
 

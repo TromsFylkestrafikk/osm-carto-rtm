@@ -608,25 +608,55 @@
         "dbname": "osm_rtm",
         "extent": "-20037508.34,-20037508.34,20037508.34,20037508.34",
         "geometry_field": "way",
-        "id": "landuse_label",
+        "id": "area_label_high",
         "key_field": "",
         "project": "foss4g-2011",
         "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
-        "table": "( SELECT COALESCE(landuse, leisure, \"natural\", highway, amenity, tourism) AS type,\n    name, way_area AS area,\n    ST_PointOnSurface(way) AS way\n  FROM planet_osm_polygon\n  WHERE name IS NOT NULL\n    AND (boundary IS NULL OR boundary NOT IN ('administrative'))    AND way && !bbox!\n    AND ST_IsValid(way)\n\n  UNION ALL\n\n  SELECT 'building' AS type, name, way_area AS area,\n    ST_PointOnSurface(way) AS way\n  FROM planet_osm_polygon\n  WHERE name IS NOT NULL\n    AND building NOT IN ('', 'no', '0', 'false')\n    AND way && !bbox!\n    AND ST_IsValid(way)\n  ORDER BY area DESC\n) AS data",
+        "table": "( SELECT COALESCE(landuse, leisure, \"natural\", highway, place, amenity, tourism) AS type,\n    name, way_area AS area,\n    ST_PointOnSurface(way) AS way\n  FROM planet_osm_polygon\n  WHERE name IS NOT NULL\n    AND (boundary IS NULL OR boundary NOT IN ('administrative'))    AND (tags->'was:boundary' IS NULL OR tags->'was:boundary' NOT IN ('administrative'))    AND way && !bbox!\n    AND ST_IsValid(way)\n\n  UNION ALL\n\n  SELECT 'building' AS type, name, way_area AS area,\n    ST_PointOnSurface(way) AS way\n  FROM planet_osm_polygon\n  WHERE name IS NOT NULL\n    AND building NOT IN ('', 'no', '0', 'false')\n    AND way && !bbox!\n    AND ST_IsValid(way)\n  ORDER BY area DESC\n) AS data",
         "type": "postgis"
       },
       "class": "",
       "geometry": "point",
-      "id": "area_label",
-      "name": "area_label",
+      "id": "area_label_high",
+      "name": "area_label_high",
       "properties": {
           "minzoom": 10,
       },
       "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
       "srs-name": "900913",
       "status": "on",
-      "layerId": "area_label"
+      "layerId": "area_label_high"
     },
+
+
+
+
+    {
+      "Datasource": {
+        "dbname": "osm_rtm",
+        "extent": "-20037508.34,-20037508.34,20037508.34,20037508.34",
+        "geometry_field": "way",
+        "id": "area_label_med",
+        "key_field": "",
+        "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+        "table": "( SELECT COALESCE(landuse, \"natural\", highway, place) AS type,\n    name, way_area AS area,\n    ST_PointOnSurface(way) AS way\n  FROM planet_osm_polygon\n  WHERE name IS NOT NULL\n    AND (boundary IS NULL OR boundary NOT IN ('administrative'))    AND (tags->'was:boundary' IS NULL OR tags->'was:boundary' NOT IN ('administrative'))    AND way && !bbox!\n    AND ST_IsValid(way)\n) AS data",
+        "type": "postgis"
+      },
+      "geometry": "point",
+      "id": "area_label_med",
+      "name": "area_label_med",
+      "properties": {
+          "minzoom": 8,
+          "maxzoom": 9
+      },
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "srs-name": "900913",
+      "status": "on",
+      "layerId": "area_label_med"
+    },
+
+
+
     {
       "Datasource": {
         "dbname": "osm_rtm",
