@@ -38,6 +38,7 @@
   [type='stadium']       { polygon-fill: @sports; }
   [type='university']    { polygon-fill: @school; }
   [type='wood']          { polygon-fill: @wooded; }
+  [type='wetland']       { polygon-fill: @heath; }
   [type='heath']         { polygon-fill: @heath; }
   [type='scrub']         { polygon-fill: @scrub; }
   [type='meadow']        { polygon-fill: @meadow; }
@@ -64,7 +65,6 @@
     line-offset: -0.5;
   }
   [type='wetland'][zoom>11] {
-    polygon-fill: @wooded;
     polygon-pattern-file:url(img/wetland.png);
   }
 }
