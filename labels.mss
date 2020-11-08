@@ -281,10 +281,10 @@
       text-character-spacing: 1;
       text-halo-radius: 2;
     }
-    [zoom = 11][area > 2000000000],
-    [zoom = 12][area > 409600000],
-    [zoom = 13][area > 102400000],
-    [zoom = 14][area > 25600000],
+    [zoom >= 11][area > 2000000000],
+    [zoom >= 12][area > 409600000],
+    [zoom >= 13][area > 102400000],
+    [zoom >= 14][area > 25600000],
     [zoom = 15][area > 6400000],
     [zoom = 16][area > 1600000],
     [zoom = 17][area > 320000],
@@ -293,10 +293,6 @@
       text-character-spacing: 2;
       text-wrap-width: 120;
     }
-    [zoom = 12][area > 2000000000],
-    [zoom = 13][area > 409600000],
-    [zoom = 14][area > 102400000],
-    [zoom = 15][area > 25600000],
     [zoom = 16][area > 6400000],
     [zoom = 17][area > 1600000],
     [zoom = 18][area > 320000] {
