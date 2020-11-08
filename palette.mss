@@ -68,7 +68,11 @@ Map { font-directory: url(./fonts); }
 @park:              #DAF2C1;
 @cemetery:          #D6DED2;
 @wooded:            #C3D9AD;
+@heath:             #cee2b0;
+@scrub:             #bacfa7;
+@meadow:            #b7e1ac;
 @agriculture:       #F2E8B6;
+@military:          #f55;
 
 @building:          #E4E0E0;
 @hospital:          rgb(229,198,195);
