@@ -72,6 +72,7 @@ Map { font-directory: url(./fonts); }
 @scrub:             #bacfa7;
 @meadow:            #b7e1ac;
 @agriculture:       #F2E8B6;
+@quarry:            #d6cfc7;
 @military:          #f55;
 
 @building:          #E4E0E0;
