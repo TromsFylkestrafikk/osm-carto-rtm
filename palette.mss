@@ -62,17 +62,17 @@ Map { font-directory: url(./fonts); }
 /* ================================================================== */
 
 @land:              #FCFBE7;
-@water:             #C4DFF6;
-@grass:             #E6F2C1;
-@beach:             #FFEEC7;
-@park:              #DAF2C1;
+@water:             #A3D4FF;
+@grass:             #EEF5D8;
+@beach:             #F9F1DE;
+@park:              #E5F5D4;
 @cemetery:          #D6DED2;
-@wooded:            #C3D9AD;
-@heath:             #cee2b0;
-@scrub:             #bacfa7;
-@meadow:            #b7e1ac;
-@agriculture:       #F2E8B6;
-@quarry:            #d6cfc7;
+@wooded:            #D5EAC1;
+@heath:             lighten(@wooded,2%);
+@scrub:             @wooded * 0.95;
+@meadow:            #E1FDC7;
+@agriculture:       #E4E0CD;
+@quarry:            #D6CFC7;
 @military:          #f55;
 
 @building:          #E4E0E0;
@@ -116,7 +116,7 @@ Map { font-directory: url(./fonts); }
 
 @tertiary_line:     @land * 0.6;
 @tertiary_fill:     #ecedb2;
-@tertiary_case:     @tertiary_fill * 0.4;
+@tertiary_case:     @tertiary_fill * 0.6;
 
 @standard_line:     @land * 0.75;
 @standard_fill:     #fff;
