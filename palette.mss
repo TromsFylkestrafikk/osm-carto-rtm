@@ -100,27 +100,27 @@ Map { font-directory: url(./fonts); }
 
 @motorway_line:     #e64545;
 @motorway_fill:     lighten(@motorway_line,10%);
-@motorway_case:     @motorway_line * 0.8;
+@motorway_case:     @motorway_line * 0.6;
 
 @trunk_line:        #e66d45;
 @trunk_fill:        lighten(@trunk_line,10%);
-@trunk_case:        @trunk_line * 0.7;
+@trunk_case:        @trunk_line * 0.6;
 
 @primary_line:      #e69645;
 @primary_fill:      lighten(@primary_line,10%);
-@primary_case:      @primary_line * 0.7;
+@primary_case:      @primary_line * 0.6;
 
 @secondary_line:    #cca93d;
 @secondary_fill:    lighten(@secondary_line,10%);
-@secondary_case:    @secondary_line * 0.7;
+@secondary_case:    @secondary_line * 0.65;
 
-@tertiary_line:     @land * 0.7;
-@tertiary_fill:     #fff;
-@tertiary_case:     @land * 0.65;
+@tertiary_line:     @land * 0.6;
+@tertiary_fill:     #ecedb2;
+@tertiary_case:     @tertiary_fill * 0.4;
 
 @standard_line:     @land * 0.75;
 @standard_fill:     #fff;
-@standard_case:     @land * 0.8;
+@standard_case:     @land * 0.7;
 
 @pedestrian_line:   @standard_line;
 @pedestrian_fill:   #FAFAF5;
