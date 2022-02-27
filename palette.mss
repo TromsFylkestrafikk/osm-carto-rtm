@@ -61,29 +61,29 @@ Map { font-directory: url(./fonts); }
 /* LANDUSE & LANDCOVER COLORS
 /* ================================================================== */
 
-@land:              #FCFBE7;
-@water:             #A3D4FF;
-@grass:             #EEF5D8;
-@beach:             #F9F1DE;
-@park:              #E5F5D4;
-@cemetery:          #D6DED2;
-@wooded:            #D5EAC1;
-@heath:             lighten(@wooded,2%);
+@land:              #fcfbe7;
+@water:             #90d0ff;
+@grass:             #eef5d8;
+@beach:             #f9f1de;
+@park:              #e5f5d4;
+@cemetery:          lighten(@sports, 2%);
+@wooded:            #dbf5d1;
+@heath:             lighten(@wooded, 2%);
 @scrub:             @wooded * 0.95;
-@meadow:            #E1FDC7;
-@agriculture:       #E4E0CD;
-@quarry:            #D6CFC7;
+@meadow:            #e0fed8;
+@agriculture:       #eaf2d4;
+@quarry:            #d6cfc7;
 @military:          #f55;
 
-@building:          #E4E0E0;
+@building:          #e4e0e0;
 @hospital:          rgb(229,198,195);
-@school:            #FFF5CC;
-@sports:            #B8E6B8;
+@school:            #fff5cc ;
+@sports:            #c3ebc3;
 
-@residential:       #f5f5f5;
+@residential:       #ecf7f2;
 @commercial:        @land * 0.97;
 @industrial:        @land * 0.96;
-@parking:           #EEE;
+@parking:           #eee;
 
 /* ================================================================== */
 /* ROAD COLORS
@@ -115,7 +115,7 @@ Map { font-directory: url(./fonts); }
 @secondary_case:    @secondary_line * 0.65;
 
 @tertiary_line:     @land * 0.6;
-@tertiary_fill:     #ecedb2;
+@tertiary_fill:     #fbfaa4;
 @tertiary_case:     @tertiary_fill * 0.6;
 
 @standard_line:     @land * 0.75;
@@ -123,11 +123,11 @@ Map { font-directory: url(./fonts); }
 @standard_case:     @land * 0.7;
 
 @pedestrian_line:   @standard_line;
-@pedestrian_fill:   #FAFAF5;
+@pedestrian_fill:   #fafaf5;
 @pedestrian_case:   @land;
 
 @cycle_line:        @standard_line;
-@cycle_fill:        #FAFAF5;
+@cycle_fill:        #fafaf5;
 @cycle_case:        @land;
 
 @rail_line:         #999;

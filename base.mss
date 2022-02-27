@@ -65,9 +65,6 @@
     line-width: 1.0;
     line-offset: -0.5;
   }
-  [type='wetland'][zoom>11] {
-    polygon-pattern-file:url(img/wetland.png);
-  }
 }
 
 #landuse_gen0[zoom > 3][zoom <= 9][type = 'glacier'],
@@ -103,12 +100,12 @@
 // so we use a separate layer that does this for us.
 #buildings[zoom>=17][type != 'hedge'] {
   building-fill:@building;
-  building-height:1.5;
+  building-height: 3;
 }
 
 #buildings[zoom>=17][type = 'hedge'] {
   building-fill:@wooded;
-  building-height:1.25;
+  building-height: 1.25;
 }
 
 /* ================================================================== */
